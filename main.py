@@ -96,8 +96,8 @@ def promotion_image():
                     </html>'''
 
 
-@app.route('/astronaut_selection', methods=['POST', 'GET'])
-def astronaut_selection():
+@app.route('/form_sample', methods=['POST', 'GET'])
+def form_sample():
     if request.method == 'GET':
         return f'''<!doctype html>
                         <html lang="en">
@@ -168,6 +168,7 @@ def astronaut_selection():
         print(request.form['accept'])
         print(request.form['sex'])
         return "Форма отправлена"
+
 
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
