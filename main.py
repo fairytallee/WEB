@@ -108,15 +108,18 @@ def form_sample():
                             href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
                             integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
                             crossorigin="anonymous">
-                            <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}" />
+                            <link rel="stylesheet" type="text/css"
+                             href="{url_for('static', filename='css/style.css')}"/>
                             <title>Пример формы</title>
                           </head>
                           <body>
                             <h1>Форма для регистрации в суперсекретной системе</h1>
                             <div>
                                 <form class="login_form" method="post">
-                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Введите адрес почты" name="email">
-                                    <input type="password" class="form-control" id="password" placeholder="Введите пароль" name="password">
+                                    <input type="email" class="form-control" id="email"
+                                     aria-describedby="emailHelp" placeholder="Введите адрес почты" name="email">
+                                    <input type="password" class="form-control"
+                                     id="password" placeholder="Введите пароль" name="password">
                                     <div class="form-group">
                                         <label for="classSelect">В каком вы классе</label>
                                         <select class="form-control" id="classSelect" name="class">
@@ -138,7 +141,8 @@ def form_sample():
                                     <div class="form-group">
                                         <label for="form-check">Укажите пол</label>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="radio" name="sex" id="male" value="male" checked>
+                                          <input class="form-check-input"
+                                           type="radio" name="sex" id="male" value="male" checked>
                                           <label class="form-check-label" for="male">
                                             Мужской
                                           </label>
