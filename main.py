@@ -63,29 +63,29 @@ def promotion_image():
                         <img src="{url_for('static', filename='img/mars.jpg')}"
                         alt="здесь должна была быть картинка, но не нашлась">
                         
-                        <ul>
+                        <ul class="list-unstyled">
                             <li>
-                                <div class="alert alert-primary" role="alert">
+                                <div class="alert alert-success" role="alert" color="green">
                                     Человечество вырастает из детства.
                                 </div>
                             </li>
                             <li>
-                                <div class="alert alert-primary" role="alert">
+                                <div class="alert alert-danger" role="alert">
                                     Человечеству мала одна планета.
                                 </div>
                             </li>
                             <li>
-                                <div class="alert alert-primary" role="alert">
+                                <div class="alert alert-info" role="alert">
                                     Мы сделаем обитаемыми безжизненные пока планеты.
                                 </div>
                             </li>
                             <li>
-                                <div class="alert alert-primary" role="alert">
+                                <div class="alert alert-warning" role="alert">
                                     И начнем с Марса!
                                 </div>
                             </li>
                             <li>
-                                <div class="alert alert-primary" role="alert">
+                                <div class="alert alert-secondary" role="alert">
                                     Присоединяйся!
                                 </div>
                             </li>
