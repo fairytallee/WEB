@@ -64,9 +64,34 @@ def promotion_image():
                         <img src="{url_for('static', filename='img/mars.jpg')}"
                         alt="здесь должна была быть картинка, но не нашлась">
                         
-                        <div class="alert alert-primary" role="alert">
-                            А мы тут компонентами Bootstrap балуемся
-                        </div>
+                        <ul>
+                            <li>
+                                <div class="alert alert-primary" role="alert">
+                                    Человечество вырастает из детства.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="alert alert-primary" role="alert">
+                                    Человечеству мала одна планета.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="alert alert-primary" role="alert">
+                                    Мы сделаем обитаемыми безжизненные пока планеты.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="alert alert-primary" role="alert">
+                                    И начнем с Марса!
+                                </div>
+                            </li>
+                            <li>
+                                <div class="alert alert-primary" role="alert">
+                                    Присоединяйся!
+                                </div>
+                            </li>
+                        </ul>
+
                       </body>
                     </html>'''
 
