@@ -270,5 +270,42 @@ def greeting(planet_name):
                 </html>'''
 
 
+@app.route('/results/<nickname>/<int:level>/<float:rating>')
+def two_params(nickname, level, rating):
+    return f'''<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <link rel="stylesheet"
+                   href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+                   integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+                   crossorigin="anonymous">
+                    <title>Пример с несколькими параметрами</title>
+                  </head>
+                  <body>
+                    <h1 style="text-align: center; margin-top: 30px; margin-bottom: 30px;">Результаты отбора претендента {nickname} на участие в миссии</h1>
+                    
+                    <ul class="list-unstyled" style="text-align: center;">
+                            <li>
+                                <div class="alert alert-success" role="alert" color="green">
+                                    <h3>Поздравляем! Ваш рейтинг после {level} этапа отбора:</h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="alert alert-danger" role="alert">
+                                    <h3>{rating} баллов!!!</h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="alert alert-info" role="alert">
+                                    <h3>Желаем удачи!</h3>
+                                </div>
+                            </li>
+                        </ul>
+                  </body>
+                </html>'''
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
