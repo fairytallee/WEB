@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="UTF-8">
+        <title>{{ title }}</title>
+        <style>
+        	h1 {
+        		text-align: center;
+        	}
+        	h4 {
+        		text-align: center;
+        	}
+        	h2 {
+        		text-align: center;
+        	}
+        	.for_img {
+        		text-align: center;
+        	}
+        	.for_lists {
+        		width: 100%;
+        		text-align: center;
+        	}
+        	ul {
+        		display: inline-block;
+        	}
+        	ol {
+        		display: inline-block;
+        	}
+        	img {
+        		width: 600px;
+        		height: auto;
+        	}
+        </style>
+    </head>
+    <body>
+        <h1>Миссия Колонизация Марса</h1>
+        <h4>И на Марсе будут яблони цвести!</h4>
+        {% block content %}{% endblock %}
+    </body>
+</html>
