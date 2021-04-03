@@ -26,6 +26,15 @@ def list_prof(list):
     return render_template('list_prof.html', list=list, profs=profs)
 
 
+@app.route('/answer')
+@app.route('/auto_answer')
+def auto_answer():
+    args = {'title': 'Анкета', 'surname': 'Ватник', 'name': 'Алексей', 'education': 'высшее', 'profession': 'Штурман',
+            'sex': 'мужской', 'motivation': 'Всегда мечтал умереть!', 'ready': 'ДА!'}
+    print(list(args.values()))
+    return render_template('auto_answer.html', keys=list(args.keys()), elems=list(args.values()))
+
+
 @app.route('/odd_even')
 def odd_even():
     return render_template('odd_even.html', number=43324)
