@@ -3,9 +3,10 @@ from flask import url_for
 from flask import request
 from PIL import Image
 from io import BytesIO
-from loginform import AstroLoginForm
 from flask import render_template
 from flask import redirect
+from flask_login import LoginManager
+from loginform import LoginForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -40,10 +41,10 @@ def auto_answer():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    form = AstroLoginForm
-    # if form.validate_on_submit():
-    #     return redirect('/success')
-    return render_template('login.html', title='Аварийный доступ', form=form)
+    form = LoginForm()
+    if form.validate_on_submit():
+        return redirect('/success')
+    return render_template('login.html', title='Авторизация', form=form)
 
 
 @app.route('/odd_even')
