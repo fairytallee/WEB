@@ -35,5 +35,5 @@ class Jobs(SqlAlchemyBase):
     is_finished = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
 
     def __repr__(self):
-        return ' '.join(map(str, [self.team_leader, self.job, self.age, self.work_size, self.collaborators,
-                                  self.is_finished]))
+        return ' '.join(map(str, [self.team_leader, self.job, self.work_size, self.collaborators,
+                                  self.start_date, self.end_date, self.is_finished]))

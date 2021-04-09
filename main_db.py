@@ -1,13 +1,16 @@
 from flask import Flask
 from data import db_session
 from data.users import User, Jobs
+import datetime
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
+db_session.global_init("db/mars_explorer.db")
 
-def main():
-    db_session.global_init("db/mars_explorer.db")
+
+def main3():
+    # db_session.global_init("db/mars_explorer.db")
     db_sess = db_session.create_session()
     try:
         db_sess.query(User).delete()
@@ -63,12 +66,38 @@ def main():
     except Exception as ex:
         print(f'Ошибка: {ex}')
 
-    print()
     for user in db_sess.query(User).all():
         print(user)
-    print()
+    # app.run()
+
+
+def main4():
+    # db_session.global_init("db/mars_explorer.db")
+    db_sess = db_session.create_session()
+    try:
+        db_sess.query(Jobs).delete()
+        db_sess.commit()
+        job = Jobs()
+        job.team_leader = 1
+        job.job = 'deployment of residential modules 1 and 2'
+        job.work_size = 15
+        job.collaborators = '2, 3'
+        job.start_date = datetime.datetime.now()
+        job.is_finished = False
+        db_sess.add(job)
+
+    except Exception as ex:
+        print(f'Ошибка: {ex}')
+    for elem in db_sess.query(Jobs).all():
+        print(elem)
     # app.run()
 
 
 if __name__ == '__main__':
-    main()
+    print()
+    print('ЗАДАЧА 3:')
+    main3()
+    print()
+    print('ЗАДАЧА 4:')
+    main4()
+    print()
