@@ -4,6 +4,8 @@ from flask import request
 from PIL import Image
 from io import BytesIO
 from flask import render_template
+from flask_wtf import FlaskForm
+from flask_login import login_user
 from flask import redirect
 from flask_login import LoginManager
 from loginform import LoginForm

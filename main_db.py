@@ -1,6 +1,7 @@
 from flask import Flask
 from data import db_session
-from data.users import User, Jobs
+from data.user import User
+from data.job import Jobs
 import datetime
 
 app = Flask(__name__)
@@ -10,7 +11,6 @@ db_session.global_init("db/mars_explorer.db")
 
 
 def main3():
-    # db_session.global_init("db/mars_explorer.db")
     db_sess = db_session.create_session()
     try:
         db_sess.query(User).delete()
@@ -93,6 +93,19 @@ def main4():
     # app.run()
 
 
+def main5():
+    n_base = input('Введите название базы: ')
+
+    try:
+        db_session.global_init(f'db/{n_base}')
+
+    except Exception:
+        print('Неверное название базы.')
+    db_sess = db_session.create_session()
+    for elem in db_sess.query(User).all():
+        print(elem)
+
+
 if __name__ == '__main__':
     print()
     print('ЗАДАЧА 3:')
@@ -100,4 +113,7 @@ if __name__ == '__main__':
     print()
     print('ЗАДАЧА 4:')
     main4()
+    print()
+    print('ЗАДАЧА 5:')
+    main5()
     print()
