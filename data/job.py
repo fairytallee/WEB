@@ -1,6 +1,7 @@
 import datetime
 import sqlalchemy
 from flask_login import UserMixin
+from sqlalchemy import orm
 from .db_session import SqlAlchemyBase
 
 
@@ -15,6 +16,7 @@ class Jobs(SqlAlchemyBase):
     start_date = sqlalchemy.Column(sqlalchemy.DateTime, nullable=True)
     end_date = sqlalchemy.Column(sqlalchemy.DateTime, nullable=True)
     is_finished = sqlalchemy.Column(sqlalchemy.Boolean, nullable=True)
+    user = orm.relation('User')
 
     def __repr__(self):
         return ' '.join(map(str, [self.team_leader, self.job, self.work_size, self.collaborators,

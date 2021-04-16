@@ -2,15 +2,12 @@
 <html lang="en">
 	<head>
     	<meta charset="UTF-8">
-        <title>{{ title }}</title>
+        <title>{{title}} </title>
         <style>
         	h1 {
         		text-align: center;
         	}
         	h4 {
-        		text-align: center;
-        	}
-        	h2 {
         		text-align: center;
         	}
         	.for_img {
@@ -24,20 +21,66 @@
         		display: inline-block;
         	}
         	ol {
-        		display: il
+        		display: inline-block;
         	}
         	img {
         		width: 600px;
         		height: auto;
         	}
         	body {
-        		font-family: Arial;
+        		font-family: helvetica;
         	}
+
+			/* границы ячеек первого ряда таблицы */
+			th {
+			   background-color: #e8e8e8;
+			}
+			/* границы ячеек тела таблицы */
+			td {
+			   background-color: lightblue;
+			}
+
+			.for_tables {
+				text-align: center;
+				width: 80%;
+				position: absolute;
+			    left: 10%;
+			    margin: auto;
+			}
+			.for_tables table {
+				width: 100%;
+			}
+
+			header {
+				text-align: center;
+				width: 100%;
+				height: auto;
+				display: flex;
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin: auto;
+				background-color: #ededed;
+				padding: 1px;
+			}
+
+			.main_h {
+				margin-left: 20px;
+			}
+			.smain_h{
+				margin-left: 48%;
+				top: 0;
+				margin-top: 29px;
+				color: #a1a1a1;
+			}
+			
         </style>
     </head>
     <body>
-        <h1>Миссия Колонизация Марса</h1>
-        <h4>И на Марсе будут яблони цвести!</h4>
+    	<header> 
+    		<h1 class="main_h">Миссия Колонизация Марса</h1>
+        	<h3 class="smain_h">И на Марсе будут яблони цвести!</h4>
+    	</header>>
         {% block content %}{% endblock %}
     </body>
 </html>
